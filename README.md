@@ -1,7 +1,9 @@
 # Florence Weekend Guide
 
-Four-page fictional educational site for MKTG:4400: Home, Budget Travel, 3-Day Itineraries, and Florence Activities.
+Fictional educational website for MKTG:4400 at the University of Iowa.
 
-Before publishing, replace `YOUR-USERNAME` and `YOUR-REPO` in `robots.txt` and `sitemap.xml` with your GitHub username and repository name. The sitemap should list four pages.
+Live site: https://lydiaheitman.github.io/Florence-Study-Abroad-Guide/
 
-All website copy and layout generated with AI.
+Pages: Home, Budget Travel, Popular Destinations (`itineraries.html`), and Florence Activities. The existing itineraries filename is retained so previously shared links keep working.
+
+The site uses external links to travel providers and attraction information. Accommodation properties are examples to research, not verified live rankings.
