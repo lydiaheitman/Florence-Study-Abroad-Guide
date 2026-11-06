@@ -9,45 +9,44 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    .destination-photo {
-      display: block;
+    .destination-image {
       width: 100%;
-      height: 190px;
+      height: 195px;
       object-fit: cover;
+      display: block;
       border-radius: 10px;
-      margin-bottom: 8px;
-      background: #f4e8ec;
+      margin-bottom: 12px;
+      background: #e9d8dd;
     }
 
-    .destination-placeholder {
+    .destination-image-fallback {
+      display: none;
       width: 100%;
-      height: 190px;
-      display: flex;
+      height: 195px;
       align-items: center;
       justify-content: center;
-      border-radius: 10px;
-      background: #f4e8ec;
-      color: #7c2947;
-      text-align: center;
       padding: 20px;
-      margin-bottom: 8px;
-      font-size: 14px;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      background: #722943;
+      color: white;
+      font-weight: 600;
     }
 
-    .photo-credit {
+    .destination-credit {
       font-size: 11px;
-      line-height: 1.4;
-      margin: 0 0 12px;
+      margin: -4px 0 12px;
       color: #76666a;
     }
 
-    .photo-credit a {
-      color: #7c2947;
+    .destination-credit a {
+      color: #722943;
     }
 
     @media (max-width: 640px) {
-      .destination-photo,
-      .destination-placeholder {
+      .destination-image,
+      .destination-image-fallback {
         height: 170px;
       }
     }
@@ -85,111 +84,111 @@
         <h2>Popular European destinations for study abroad students</h2>
         <p>Browse ideas rather than fixed three-day itineraries. Some trips work well as a weekend, while farther destinations or islands may need extra days. Choose dates based on class schedules and transport connections.</p>
 
-        <div class="cards" id="destinations">
+        <div class="cards" id="destination-cards">
 
-          <article class="card" data-photo="Valletta Malta Grand Harbour skyline">
+          <article class="card" data-wiki="Valletta">
             <h3>Malta</h3>
             <p>Valletta, historic streets, turquoise water, and island day trips.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Eiffel Tower Paris panorama">
+          <article class="card" data-wiki="Paris">
             <h3>Paris, France</h3>
             <p>Museums, the Seine, Montmartre, and classic Paris landmarks.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Interlaken Switzerland mountains lake">
+          <article class="card" data-wiki="Interlaken">
             <h3>Switzerland</h3>
             <p>Mountain scenery, lakes, and towns such as Interlaken and Lucerne.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="London Tower Bridge River Thames">
+          <article class="card" data-wiki="London">
             <h3>London, UK</h3>
             <p>Markets, museums, theater, and famous neighborhoods.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Milan Duomo cathedral Italy">
+          <article class="card" data-wiki="Milan">
             <h3>Milan, Italy</h3>
             <p>The Duomo, shopping, and an easy Italian city break.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Venice Grand Canal Rialto Bridge">
+          <article class="card" data-wiki="Venice">
             <h3>Venice, Italy</h3>
             <p>Canals, bridges, islands, and walks away from the busiest streets.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Dublin Ireland Ha'penny Bridge River Liffey">
+          <article class="card" data-wiki="Dublin">
             <h3>Dublin, Ireland</h3>
             <p>Live music, historic streets, and day-trip possibilities.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Nice France Promenade des Anglais coastline">
+          <article class="card" data-wiki="Nice">
             <h3>South of France</h3>
             <p>Nice, seaside walks, and nearby coastal towns.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Vienna Austria Schonbrunn Palace">
+          <article class="card" data-wiki="Vienna">
             <h3>Vienna, Austria</h3>
             <p>Palaces, cafés, museums, and classical music.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Budapest Hungarian Parliament Danube river">
+          <article class="card" data-wiki="Budapest">
             <h3>Budapest, Hungary</h3>
             <p>Thermal baths, river views, and impressive architecture.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Ibiza Spain beach turquoise sea">
+          <article class="card" data-wiki="Ibiza">
             <h3>Ibiza, Spain</h3>
             <p>Beaches, old-town walks, and nightlife; seasonal planning matters.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Berlin Brandenburg Gate Germany">
+          <article class="card" data-wiki="Berlin">
             <h3>Germany</h3>
             <p>Choose Berlin for history and culture or Munich for Bavarian sights.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Rome Italy Colosseum">
+          <article class="card" data-wiki="Rome">
             <h3>Rome, Italy</h3>
             <p>Ancient ruins, Vatican-area sights, and memorable food.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Barcelona Spain Sagrada Familia">
+          <article class="card" data-wiki="Barcelona">
             <h3>Barcelona, Spain</h3>
             <p>Gaudí architecture, beaches, markets, and lively neighborhoods.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Split Croatia waterfront Diocletian Palace">
+          <article class="card" data-wiki="Split,_Croatia">
             <h3>Croatia</h3>
             <p>Split, Dubrovnik, and islands such as Hvar; ferry schedules vary by season.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Lisbon Portugal city panorama rooftops">
+          <article class="card" data-wiki="Lisbon">
             <h3>Lisbon, Portugal</h3>
             <p>Viewpoints, tiled streets, trams, and coastal day trips.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Athens Greece Acropolis Parthenon">
+          <article class="card" data-wiki="Athens">
             <h3>Greece</h3>
             <p>Athens for history; islands such as Corfu, Santorini, or Mykonos for scenery.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
           </article>
 
-          <article class="card" data-photo="Prague Czech Republic Charles Bridge skyline">
+          <article class="card" data-wiki="Prague">
             <h3>Prague, Czech Republic</h3>
             <p>Charles Bridge, Prague Castle, Old Town Square, and riverside walks.</p>
             <a href="budget-travel.html#accommodations">See accommodation ideas →</a>
@@ -217,96 +216,84 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const endpoint = 'https://commons.wikimedia.org/w/api.php';
 
-      function placeholder(card, label) {
-        const box = document.createElement('div');
-        box.className = 'destination-placeholder';
-        box.textContent = 'Photo unavailable: ' + label;
-        card.insertBefore(box, card.querySelector('h3'));
+      function showFallback(card, title, img) {
+        if (img) img.style.display = 'none';
+
+        let fallback = card.querySelector('.destination-image-fallback');
+
+        if (!fallback) {
+          fallback = document.createElement('div');
+          fallback.className = 'destination-image-fallback';
+          fallback.textContent = title;
+          card.insertBefore(fallback, card.querySelector('h3'));
+        }
+
+        fallback.style.display = 'flex';
       }
 
-      async function loadDestinationPhoto(card) {
-        const searchTerm = card.dataset.photo;
-        const destination = card.querySelector('h3').textContent;
+      async function addPhoto(card) {
+        const title = card.querySelector('h3').textContent;
+        const wikiPage = card.dataset.wiki;
 
         try {
-          const params = new URLSearchParams({
-            action: 'query',
-            format: 'json',
-            origin: '*',
-            generator: 'search',
-            gsrsearch: searchTerm + ' filetype:bitmap',
-            gsrnamespace: '6',
-            gsrlimit: '12',
-            prop: 'imageinfo',
-            iiprop: 'url|extmetadata',
-            iiurlwidth: '850'
-          });
+          const url =
+            'https://en.wikipedia.org/w/api.php?' +
+            new URLSearchParams({
+              action: 'query',
+              format: 'json',
+              origin: '*',
+              prop: 'pageimages',
+              titles: wikiPage.replaceAll('_', ' '),
+              pithumbsize: '900'
+            });
 
-          const response = await fetch(endpoint + '?' + params);
-          if (!response.ok) throw new Error('Image search failed');
+          const response = await fetch(url);
+
+          if (!response.ok) {
+            throw new Error('Photo service unavailable');
+          }
 
           const data = await response.json();
           const pages = Object.values(data.query?.pages || {});
+          const page = pages[0];
 
-          const candidates = pages
-            .map(page => ({
-              page,
-              info: page.imageinfo?.[0]
-            }))
-            .filter(item => {
-              if (!item.info?.thumburl) return false;
-
-              const license = (
-                item.info.extmetadata?.LicenseShortName?.value || ''
-              ).toLowerCase();
-
-              return license.includes('cc') ||
-                license.includes('public domain') ||
-                license.includes('pd-');
-            });
-
-          const chosen = candidates[0];
-
-          if (!chosen) {
-            placeholder(card, destination);
+          if (!page?.thumbnail?.source) {
+            showFallback(card, title);
             return;
           }
 
           const img = document.createElement('img');
-          img.className = 'destination-photo';
-          img.src = chosen.info.thumburl;
-          img.alt = 'Travel photograph for ' + destination;
+          img.className = 'destination-image';
+          img.src = page.thumbnail.source;
+          img.alt = 'Photograph of ' + title;
           img.loading = 'lazy';
           img.decoding = 'async';
 
-          img.onerror = () => {
-            img.remove();
-            placeholder(card, destination);
-          };
+          img.onerror = () => showFallback(card, title, img);
 
           card.insertBefore(img, card.querySelector('h3'));
 
           const credit = document.createElement('p');
-          credit.className = 'photo-credit';
+          credit.className = 'destination-credit';
 
           const link = document.createElement('a');
-          link.href = chosen.info.descriptionurl;
+          link.href = 'https://en.wikipedia.org/wiki/' + wikiPage;
           link.target = '_blank';
           link.rel = 'noopener noreferrer';
-          link.textContent = 'Photo, creator and license';
+          link.textContent = 'Image source and details';
 
           credit.appendChild(link);
           img.insertAdjacentElement('afterend', credit);
 
         } catch (error) {
-          placeholder(card, destination);
+          showFallback(card, title);
         }
       }
 
-      document.querySelectorAll('#destinations .card')
-        .forEach(loadDestinationPhoto);
+      document.querySelectorAll('#destination-cards .card')
+        .forEach(addPhoto);
+
     });
   </script>
 </body>
