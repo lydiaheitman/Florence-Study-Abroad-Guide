@@ -7,6 +7,173 @@
   <title>Cheap Weekend Trips from Florence for Students | Transport &amp; Hostels</title>
   <meta name="description" content="Compare transportation options and find student-friendly hostels for weekend travel from Florence.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .card-media {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+      margin: 0 0 15px;
+      background: #f2e8e9;
+    }
+    .card-media--logo {
+      height: 95px;
+      object-fit: contain;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #f0e6e9;
+    }
+    .card-media--pending {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 18px;
+      color: #7c2947;
+      font-size: 13px;
+      background: #f5ebed;
+      border: 1px dashed #d9bac5;
+    }
+    .card-media-credit {
+      font-size: 11px;
+      line-height: 1.3;
+      margin: -8px 0 12px;
+      color: #76666a;
+    }
+    .card-media-credit a { color: inherit; }
+    @media (max-width: 640px) {
+      .card-media { height: 170px; }
+      .card-media--logo { height: 90px; }
+    }
+  </style>
+  <script defer>
+    (() => {
+      'use strict';
+
+      const transportation = {
+        'flixbus': 'flixbus',
+        'italo treno': 'italo',
+        'trenitalia': 'trenitalia',
+        'skyscanner': 'skyscanner',
+        'omio': 'omio',
+        'vueling': 'vueling',
+        'ryanair': 'ryanair',
+        'volotea': 'volotea'
+      };
+
+      const commonsEndpoint = 'https://commons.wikimedia.org/w/api.php';
+
+      function image(url, alt, extraClass = '') {
+        const img = document.createElement('img');
+        img.className = 'card-media ' + extraClass;
+        img.src = url;
+        img.alt = alt;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        return img;
+      }
+
+      function placeholder(card, label) {
+        const box = document.createElement('div');
+        box.className = 'card-media card-media--pending';
+        box.textContent = 'Verified photo needed: ' + label;
+        card.insertBefore(box, card.querySelector('h3'));
+      }
+
+      function showLogo(card, name, slug) {
+        const img = image(
+          'https://cdn.simpleicons.org/' + slug,
+          name + ' logo',
+          'card-media--logo'
+        );
+        img.onerror = () => {
+          img.remove();
+          placeholder(card, name + ' logo');
+        };
+        card.insertBefore(img, card.querySelector('h3'));
+      }
+
+      async function showHostel(card, name) {
+        try {
+          const params = new URLSearchParams({
+            action: 'query',
+            format: 'json',
+            origin: '*',
+            generator: 'search',
+            gsrsearch: 'filetype:bitmap "' + name + '"',
+            gsrnamespace: '6',
+            gsrlimit: '12',
+            prop: 'imageinfo',
+            iiprop: 'url|extmetadata',
+            iiurlwidth: '850'
+          });
+
+          const response = await fetch(commonsEndpoint + '?' + params);
+          if (!response.ok) throw new Error('Image search unavailable');
+
+          const data = await response.json();
+          const pages = Object.values(data.query?.pages || {});
+          const words = name.toLowerCase()
+            .replace(/[^a-z0-9 ]/g, ' ')
+            .split(/\s+/)
+            .filter(word => word.length > 3);
+
+          const match = pages.find(page =>
+            words.filter(word =>
+              page.title.toLowerCase().includes(word)
+            ).length >= Math.min(2, words.length)
+          );
+
+          if (!match) {
+            placeholder(card, name);
+            return;
+          }
+
+          const info = match.imageinfo?.[0];
+          const metadata = info?.extmetadata || {};
+          const license = (metadata.LicenseShortName?.value || '').toLowerCase();
+
+          if (!info?.thumburl ||
+              !(license.includes('cc') ||
+                license.includes('public domain') ||
+                license.includes('pd-'))) {
+            placeholder(card, name);
+            return;
+          }
+
+          const img = image(info.thumburl, 'Photo of ' + name);
+          card.insertBefore(img, card.querySelector('h3'));
+
+          const credit = document.createElement('p');
+          credit.className = 'card-media-credit';
+          const link = document.createElement('a');
+          link.href = info.descriptionurl;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = 'Photo and license information';
+          credit.appendChild(link);
+          img.insertAdjacentElement('afterend', credit);
+
+        } catch (error) {
+          placeholder(card, name);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('#transportation .card').forEach(card => {
+          const name = card.querySelector('h3')?.textContent.trim();
+          const slug = transportation[name?.toLowerCase()];
+          if (slug) showLogo(card, name, slug);
+        });
+
+        document.querySelectorAll('#accommodations .card').forEach(card => {
+          const name = card.querySelector('strong')?.textContent.trim();
+          if (name) showHostel(card, name);
+        });
+      });
+    })();
+  </script>
 </head>
 <body>
   <div class="notice">
