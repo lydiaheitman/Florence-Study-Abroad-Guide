@@ -18,6 +18,7 @@
   margin-bottom: 10px;
   background: #eadde1;
 }
+
 .activity-placeholder {
   display: flex;
   align-items: center;
@@ -32,14 +33,17 @@
   text-align: center;
   font-size: 14px;
 }
+
 .photo-credit {
   font-size: 11px;
   margin: 0 0 12px;
   line-height: 1.4;
 }
+
 .photo-credit a {
   color: #722943;
 }
+
 @media (max-width:640px) {
   .activity-photo,
   .activity-placeholder {
@@ -84,10 +88,12 @@ This is a fictional website created for educational purposes as part of MKTG:440
 
 <div class="cards" id="activity-cards">
 
-<article class="card" data-wiki="Piazzale_Michelangelo">
+<article class="card"
+data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_at_Piazzale_Michelangelo%2C_Florence%2C_Italy.jpg?width=900"
+data-credit="https://commons.wikimedia.org/wiki/File:Sunset_at_Piazzale_Michelangelo,_Florence,_Italy.jpg">
 <h3>Piazzale Michelangelo at sunset</h3>
 <p>A classic panoramic view of Florence; arrive before sunset and expect crowds.</p>
-<a href="https://www.google.com/maps/search/?api=1&query=Piazzale+Michelangelo+Florence" target="_blank" rel="noopener noreferrer">More information →</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Piazzale+Michelangelo+Florence" target="_blank" rel="noopener noreferrer">More information →</a>
 </article>
 
 <article class="card" data-search="Buchetta del vino Firenze">
@@ -110,7 +116,7 @@ This is a fictional website created for educational purposes as part of MKTG:440
 
 <article class="card"
 data-image="https://images.unsplash.com/photo-1556761223-4c4282c73f77?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
-data-credit="https://unsplash.com/photos/people-cooking-together"
+data-credit="https://unsplash.com/"
 data-fallback="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&amp;fit=crop&amp;w=900&amp;q=85">
 <h3>Pasta-making class</h3>
 <p>Try a hands-on cooking experience and learn fresh pasta techniques.</p>
@@ -149,7 +155,9 @@ data-credit="https://commons.wikimedia.org/wiki/File:Mercato_Centrale_(Florence)
 <a href="https://www.feelflorence.it/en" target="_blank" rel="noopener noreferrer">More information →</a>
 </article>
 
-<article class="card" data-wiki="Piazza_Santo_Spirito">
+<article class="card"
+data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_Santo_Spirito_FI.jpg?width=900"
+data-credit="https://commons.wikimedia.org/wiki/File:Piazza_Santo_Spirito_FI.jpg">
 <h3>Oltrarno and Santo Spirito</h3>
 <p>Explore artisan streets, cafés, and local piazzas south of the Arno.</p>
 <a href="https://www.feelflorence.it/en" target="_blank" rel="noopener noreferrer">More information →</a>
@@ -170,9 +178,8 @@ data-credit="https://commons.wikimedia.org/wiki/File:Mercato_di_San_Lorenzo_(Flo
 </article>
 
 <article class="card"
-data-image="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
-data-credit="https://unsplash.com/"
-data-fallback="https://images.unsplash.com/photo-1556761223-4c4282c73f77?auto=format&amp;fit=crop&amp;w=900&amp;q=85">
+data-image="https://commons.wikimedia.org/wiki/Special:FilePath/Red_wine_in_glass.jpg?width=900"
+data-credit="https://commons.wikimedia.org/wiki/File:Red_wine_in_glass.jpg">
 <h3>Cooking or wine-tasting experience</h3>
 <p>Explore guided experiences; check age requirements and responsible-drinking guidance.</p>
 <a href="https://www.feelflorence.it/en" target="_blank" rel="noopener noreferrer">More information →</a>
