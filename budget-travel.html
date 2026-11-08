@@ -2,379 +2,488 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Cheap Weekend Trips from Florence for Students | Transport &amp; Hostels</title>
-  <meta name="description" content="Compare transportation options and find student-friendly hostels for weekend travel from Florence.">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .card-media {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      display: block;
-      border-radius: 10px;
-      margin: 0 0 15px;
-      background: #f2e8e9;
-    }
-    .card-media--logo {
-      height: 95px;
-      object-fit: contain;
-      padding: 16px;
-      background: #fff;
-      border: 1px solid #f0e6e9;
-    }
-    .card-media--pending {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 18px;
-      color: #7c2947;
-      font-size: 13px;
-      background: #f5ebed;
-      border: 1px dashed #d9bac5;
-    }
-    .card-media-credit {
-      font-size: 11px;
-      line-height: 1.3;
-      margin: -8px 0 12px;
-      color: #76666a;
-    }
-    .card-media-credit a { color: inherit; }
-    @media (max-width: 640px) {
-      .card-media { height: 170px; }
-      .card-media--logo { height: 90px; }
-    }
-  </style>
-  <script defer>
-    (() => {
-      'use strict';
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-      const transportation = {
-        'flixbus': 'flixbus',
-        'italo treno': 'italo',
-        'trenitalia': 'trenitalia',
-        'skyscanner': 'skyscanner',
-        'omio': 'omio',
-        'vueling': 'vueling',
-        'ryanair': 'ryanair',
-        'volotea': 'volotea'
-      };
+<title>Cheap Weekend Trips from Florence for Students | Transport &amp; Hostels</title>
 
-      const commonsEndpoint = 'https://commons.wikimedia.org/w/api.php';
+<meta name="description" content="Compare transportation options and find student-friendly hostels for weekend travel from Florence.">
 
-      function image(url, alt, extraClass = '') {
-        const img = document.createElement('img');
-        img.className = 'card-media ' + extraClass;
-        img.src = url;
-        img.alt = alt;
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        return img;
-      }
+<link rel="stylesheet" href="styles.css">
 
-      function placeholder(card, label) {
-        const box = document.createElement('div');
-        box.className = 'card-media card-media--pending';
-        box.textContent = 'Verified photo needed: ' + label;
-        card.insertBefore(box, card.querySelector('h3'));
-      }
+<style>
+.card-media {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  margin: 0 0 15px;
+  background: #f2e8e9;
+}
 
-      function showLogo(card, name, slug) {
-        const img = image(
-          'https://cdn.simpleicons.org/' + slug,
-          name + ' logo',
-          'card-media--logo'
+.card-media--logo {
+  height: 100px;
+  object-fit: contain;
+  padding: 15px;
+  background: white;
+  border: 1px solid #f0e6e9;
+}
+
+.card-media--fallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #722943;
+  background: #f5ebed;
+  border: 1px solid #e2cbd3;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.card-media-credit {
+  font-size: 11px;
+  line-height: 1.4;
+  margin: -8px 0 12px;
+}
+
+.card-media-credit a {
+  color: #722943;
+}
+
+@media(max-width:640px) {
+  .card-media {
+    height: 170px;
+  }
+
+  .card-media--logo {
+    height: 90px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="notice">
+This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+</div>
+
+<header class="site-header">
+<div class="wrap topline">
+
+<a class="brand" href="index.html">
+Florence Weekend Guide
+</a>
+
+<nav class="nav" aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="budget-travel.html" aria-current="page">Budget Travel</a>
+<a href="itineraries.html">Popular Destinations</a>
+<a href="florence-activities.html">Florence Activities</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="wrap">
+<div class="eyebrow">Plan smart • Spend thoughtfully</div>
+<h1>Explore more, spend less</h1>
+<p class="lead">Transport apps, booking tools, and accommodation ideas for study abroad weekends.</p>
+</div>
+</section>
+
+<section class="content">
+<div class="wrap">
+
+<h2>Transportation apps and booking websites</h2>
+
+<p>Students looking for cheap flights from Florence or cheap train tickets in Italy should compare prices and book ahead when possible to save money on weekend trips.</p>
+
+<p>These services are useful starting points for checking routes from Florence. Availability varies by date and destination; compare departure airports, luggage rules, transfers, and travel time.</p>
+
+<div class="cards" id="transportation">
+
+<article class="card" data-domain="flixbus.com">
+<h3>FlixBus</h3>
+<p>Long-distance buses across Europe</p>
+<a href="https://www.flixbus.com/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+</article>
+
+<article class="card" data-domain="italotreno.com">
+<h3>Italo Treno</h3>
+<p>High-speed rail connections in Italy</p>
+<a href="https://www.italotreno.com/en" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+</article>
+
+<article class="card" data-domain="trenitalia.com">
+<h3>Trenitalia</h3>
+<p>Italian regional and high-speed trains</p>
+<a href="https://www.trenitalia.com/en.html" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+</article>
+
+<article class="card" data-domain="skyscanner.net">
+<h3>Skyscanner</h3>
+<p>Compare flight options and dates</p>
+<a href="https://www.skyscanner.net/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+</article>
+
+<article class="card" data-domain="omio.com">
+<h3>Omio</h3>
+<p>Compare trains, buses, and flights</p>
+<a href="https://www.omio.com/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+</article>
+
+<article class="card" data-domain="vueling.com">
+<h3>Vueling</h3>
+<p>European airline routes</p>
+<a href="https://www.vueling.com/en" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+</article>
+
+<article class="card" data-domain="ryanair.com">
+<h3>Ryanair</h3>
+<p>Low-cost airline routes; check bag rules</p>
+<a href="https://www.ryanair.com/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+</article>
+
+<article class="card" data-domain="volotea.com">
+<h3>Volotea</h3>
+<p>Flights between smaller European cities</p>
+<a href="https://www.volotea.com/en/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
+</article>
+
+</div>
+
+<h2>Fun Hostels for Student Travelers</h2>
+
+<p>Looking for affordable places to stay during your weekend trips? These student-friendly hostels offer convenient locations and opportunities to meet other travelers. Check recent reviews, prices, and availability before booking!</p>
+
+<div class="cards" id="accommodations">
+
+<article class="card" data-hostel="Marco Polo Party Hostel" data-city="Malta">
+<h3>St. Julian's, Malta</h3>
+<p><strong>Marco Polo Party Hostel</strong> — A lively, social hostel in St. Julian's, close to Paceville's nightlife, with a rooftop terrace and opportunities to meet other travelers.</p>
+<a href="https://www.marcopolomalta.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="The People Paris Marais" data-city="Paris">
+<h3>Paris, France</h3>
+<p><strong>The People Paris Marais</strong> — A stylish hostel with a social atmosphere in Paris.</p>
+<a href="https://www.thepeoplehostel.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Balmers Hostel Interlaken" data-city="Interlaken">
+<h3>Switzerland</h3>
+<p><strong>Balmers Hostel Interlaken</strong> — A fun, social hostel for students who love mountain adventures.</p>
+<a href="https://www.balmers.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Wombat's City Hostel London" data-city="London">
+<h3>London, UK</h3>
+<p><strong>Wombat's City Hostel London</strong> — A social hostel with shared spaces for meeting travelers.</p>
+<a href="https://www.wombats-hostels.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Ostello Bello Milano Duomo" data-city="Milan">
+<h3>Milan, Italy</h3>
+<p><strong>Ostello Bello Milano Duomo</strong> — A lively hostel close to Milan's city center.</p>
+<a href="https://ostellobello.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Anda Venice Hostel" data-city="Venice">
+<h3>Venice, Italy</h3>
+<p><strong>Anda Venice Hostel</strong> — A modern, social hostel in Mestre with easy transportation into Venice.</p>
+<a href="https://www.andavenice.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Jacobs Inn Dublin" data-city="Dublin">
+<h3>Dublin, Ireland</h3>
+<p><strong>Jacobs Inn Dublin</strong> — A centrally located hostel with shared spaces for travelers.</p>
+<a href="https://jacobsinn.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Villa Saint Exupery Beach Hostel" data-city="Nice">
+<h3>South of France</h3>
+<p><strong>Villa Saint Exupéry Beach Hostel</strong> — A social hostel in Nice, ideal for exploring the French Riviera.</p>
+<a href="https://villahostels.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="JO&JOE Vienna" data-city="Vienna">
+<h3>Vienna, Austria</h3>
+<p><strong>JO&JOE Vienna</strong> — A fun accommodation option with communal spaces and a lively atmosphere.</p>
+<a href="https://www.joandjoe.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Maverick City Lodge" data-city="Budapest">
+<h3>Budapest, Hungary</h3>
+<p><strong>Maverick City Lodge</strong> — A centrally located hostel for exploring Budapest's nightlife.</p>
+<a href="https://mavericklodges.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Amistat Island Hostel Ibiza" data-city="Ibiza">
+<h3>Ibiza, Spain</h3>
+<p><strong>Amistat Island Hostel Ibiza</strong> — A social hostel for students planning a fun weekend in Ibiza.</p>
+<a href="https://www.amistathostels.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="The Circus Hostel Berlin" data-city="Berlin">
+<h3>Germany</h3>
+<p><strong>The Circus Hostel Berlin</strong> — A lively hostel in Berlin with a welcoming atmosphere.</p>
+<a href="https://circus-berlin.de/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="YellowSquare Rome" data-city="Rome">
+<h3>Rome, Italy</h3>
+<p><strong>YellowSquare Rome</strong> — A fun hostel with a bar, social events, and opportunities to meet other travelers.</p>
+<a href="https://yellowsquare.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Unite Hostel Barcelona" data-city="Barcelona">
+<h3>Barcelona, Spain</h3>
+<p><strong>Unite Hostel Barcelona</strong> — A social hostel near the beach and Port Olímpic nightlife, within walking distance of Shôko Barcelona.</p>
+<a href="https://unitehostel.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="En Route Hostel Split" data-city="Split">
+<h3>Croatia</h3>
+<p><strong>En Route Hostel Split</strong> — A convenient hostel for exploring Split and the Croatian coast.</p>
+<a href="https://enroutehostel.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Home Lisbon Hostel" data-city="Lisbon">
+<h3>Lisbon, Portugal</h3>
+<p><strong>Home Lisbon Hostel</strong> — A friendly hostel known for its social atmosphere and communal dinners.</p>
+<a href="https://www.homelisbonhostel.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="Athens Backpackers" data-city="Athens">
+<h3>Greece</h3>
+<p><strong>Athens Backpackers</strong> — A social hostel in Athens, great for sightseeing and meeting travelers.</p>
+<a href="https://www.athensbackpackers.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+<article class="card" data-hostel="The RoadHouse Prague" data-city="Prague">
+<h3>Prague, Czech Republic</h3>
+<p><strong>The RoadHouse Prague</strong> — A small, social hostel with opportunities to meet other travelers.</p>
+<a href="https://www.theroadhouseprague.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
+</article>
+
+</div>
+
+<h2>How to compare your full weekend budget</h2>
+
+<p>Add up round-trip transportation, local transfers, lodging, city taxes, meals, attraction tickets, and an emergency cushion. A cheap flight may cost more after baggage and airport transfers.</p>
+
+<div class="cards">
+
+<article class="card">
+<h3>Check transport first</h3>
+<p>Train or bus can be easier for nearby Italian cities; flights may be more practical for farther destinations. Compare door-to-door travel time.</p>
+<a href="itineraries.html">Choose a destination →</a>
+</article>
+
+<article class="card">
+<h3>Pick the right accommodation</h3>
+<p>Read recent reviews and confirm transit access, cancellation policies, and whether a room is shared or private.</p>
+<a href="#accommodations">Browse accommodation ideas →</a>
+</article>
+
+</div>
+
+<aside class="note">
+<strong>Before you book:</strong> This is an educational travel guide, not a booking service. Check current schedules, prices, recent accommodation reviews, entry requirements, and attraction hours with official providers.
+</aside>
+
+</div>
+</section>
+</main>
+
+<footer class="foot">
+<div class="wrap">
+<p><strong>Florence Weekend Guide</strong> · A fictional student travel resource</p>
+<p class="small">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+<p class="small"><a href="index.html">Back to home</a></p>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  function addFallback(card, name, logo = false) {
+    const box = document.createElement('div');
+    box.className = 'card-media card-media--fallback';
+
+    if (logo) {
+      box.classList.add('card-media--logo');
+    }
+
+    box.textContent = name;
+    card.insertBefore(box, card.querySelector('h3'));
+  }
+
+  function addImage(card, url, name, logo = false, credit = '') {
+    const img = document.createElement('img');
+
+    img.className = 'card-media';
+
+    if (logo) {
+      img.classList.add('card-media--logo');
+    }
+
+    img.alt = logo ? name + ' logo' : 'Photo associated with ' + name;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+
+    img.onerror = () => {
+      img.remove();
+
+      const existing = card.querySelector('.card-media-credit');
+      if (existing) existing.remove();
+
+      addFallback(card, name, logo);
+    };
+
+    card.insertBefore(img, card.querySelector('h3'));
+
+    if (credit) {
+      const p = document.createElement('p');
+      p.className = 'card-media-credit';
+
+      const a = document.createElement('a');
+      a.href = credit;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = 'Photo source and licensing details';
+
+      p.appendChild(a);
+      img.insertAdjacentElement('afterend', p);
+    }
+
+    img.src = url;
+  }
+
+  // Company logos, using website icons.
+  // These may be icons rather than full wordmark logos.
+
+  document.querySelectorAll('#transportation .card').forEach(card => {
+    const name = card.querySelector('h3').textContent.trim();
+    const domain = card.dataset.domain;
+
+    const iconURL =
+      'https://www.google.com/s2/favicons?domain=' +
+      encodeURIComponent(domain) +
+      '&sz=128';
+
+    addImage(card, iconURL, name, true);
+  });
+
+  // Search Wikimedia Commons for photos specifically
+  // associated with each named hostel.
+  // Do not substitute unrelated city photographs.
+
+  async function findHostelPhoto(card) {
+    const name = card.dataset.hostel;
+    const city = card.dataset.city;
+
+    const searchQueries = [
+      '"' + name + '"',
+      name + ' hostel ' + city
+    ];
+
+    for (const query of searchQueries) {
+      try {
+        const params = new URLSearchParams({
+          action: 'query',
+          format: 'json',
+          origin: '*',
+          generator: 'search',
+          gsrsearch: query,
+          gsrnamespace: '6',
+          gsrlimit: '20',
+          prop: 'imageinfo',
+          iiprop: 'url|extmetadata',
+          iiurlwidth: '900'
+        });
+
+        const response = await fetch(
+          'https://commons.wikimedia.org/w/api.php?' + params
         );
-        img.onerror = () => {
-          img.remove();
-          placeholder(card, name + ' logo');
-        };
-        card.insertBefore(img, card.querySelector('h3'));
-      }
 
-      async function showHostel(card, name) {
-        try {
-          const params = new URLSearchParams({
-            action: 'query',
-            format: 'json',
-            origin: '*',
-            generator: 'search',
-            gsrsearch: 'filetype:bitmap "' + name + '"',
-            gsrnamespace: '6',
-            gsrlimit: '12',
-            prop: 'imageinfo',
-            iiprop: 'url|extmetadata',
-            iiurlwidth: '850'
-          });
+        if (!response.ok) continue;
 
-          const response = await fetch(commonsEndpoint + '?' + params);
-          if (!response.ok) throw new Error('Image search unavailable');
+        const data = await response.json();
+        const pages = Object.values(data.query?.pages || {});
 
-          const data = await response.json();
-          const pages = Object.values(data.query?.pages || {});
-          const words = name.toLowerCase()
-            .replace(/[^a-z0-9 ]/g, ' ')
-            .split(/\s+/)
-            .filter(word => word.length > 3);
-
-          const match = pages.find(page =>
-            words.filter(word =>
-              page.title.toLowerCase().includes(word)
-            ).length >= Math.min(2, words.length)
+        const significantWords = name.toLowerCase()
+          .replace(/[^a-z0-9 ]/g, ' ')
+          .split(/\s+/)
+          .filter(word =>
+            word.length >= 4 &&
+            !['hostel', 'hotel', 'city', 'beach'].includes(word)
           );
 
-          if (!match) {
-            placeholder(card, name);
-            return;
-          }
+        const matches = pages.filter(page => {
+          const title = page.title.toLowerCase()
+            .replace(/[^a-z0-9 ]/g, ' ');
 
-          const info = match.imageinfo?.[0];
-          const metadata = info?.extmetadata || {};
-          const license = (metadata.LicenseShortName?.value || '').toLowerCase();
+          const wordMatches = significantWords.filter(word =>
+            title.includes(word)
+          ).length;
 
-          if (!info?.thumburl ||
-              !(license.includes('cc') ||
-                license.includes('public domain') ||
-                license.includes('pd-'))) {
-            placeholder(card, name);
-            return;
-          }
+          const requiredMatches = Math.min(
+            2,
+            significantWords.length
+          );
 
-          const img = image(info.thumburl, 'Photo of ' + name);
-          card.insertBefore(img, card.querySelector('h3'));
+          const info = page.imageinfo?.[0];
 
-          const credit = document.createElement('p');
-          credit.className = 'card-media-credit';
-          const link = document.createElement('a');
-          link.href = info.descriptionurl;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          link.textContent = 'Photo and license information';
-          credit.appendChild(link);
-          img.insertAdjacentElement('afterend', credit);
+          const license = (
+            info?.extmetadata?.LicenseShortName?.value || ''
+          ).toLowerCase();
 
-        } catch (error) {
-          placeholder(card, name);
+          const permitted =
+            license.includes('cc') ||
+            license.includes('public domain') ||
+            license.includes('pd-');
+
+          return wordMatches >= requiredMatches &&
+            info?.thumburl &&
+            permitted;
+        });
+
+        if (matches.length) {
+          const match = matches[0];
+          const info = match.imageinfo[0];
+
+          addImage(
+            card,
+            info.thumburl,
+            name,
+            false,
+            info.descriptionurl
+          );
+
+          return;
         }
+
+      } catch (error) {
+        // Try the next property-specific search.
       }
+    }
 
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('#transportation .card').forEach(card => {
-          const name = card.querySelector('h3')?.textContent.trim();
-          const slug = transportation[name?.toLowerCase()];
-          if (slug) showLogo(card, name, slug);
-        });
+    addFallback(card, name);
+  }
 
-        document.querySelectorAll('#accommodations .card').forEach(card => {
-          const name = card.querySelector('strong')?.textContent.trim();
-          if (name) showHostel(card, name);
-        });
-      });
-    })();
-  </script>
-</head>
-<body>
-  <div class="notice">
-    This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
-  </div>
+  document.querySelectorAll('#accommodations .card')
+    .forEach(findHostelPhoto);
 
-  <header class="site-header">
-    <div class="wrap topline">
-      <a class="brand" href="index.html">Florence Weekend Guide</a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="budget-travel.html" aria-current="page">Budget Travel</a>
-        <a href="itineraries.html">Popular Destinations</a>
-        <a href="florence-activities.html">Florence Activities</a>
-      </nav>
-    </div>
-  </header>
+});
+</script>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="eyebrow">Plan smart • Spend thoughtfully</div>
-        <h1>Explore more, spend less</h1>
-        <p class="lead">Transport apps, booking tools, and accommodation ideas for study abroad weekends.</p>
-      </div>
-    </section>
-
-    <section class="content">
-      <div class="wrap">
-        <h2>Transportation apps and booking websites</h2>
-        <p>Students looking for cheap flights from Florence or cheap train tickets in Italy should compare prices and book ahead when possible to save money on weekend trips.</p>
-        <p>These services are useful starting points for checking routes from Florence. Availability varies by date and destination; compare departure airports, luggage rules, transfers, and travel time.</p>
-
-        <div class="cards" id="transportation">
-          <article class="card">
-            <h3>FlixBus</h3>
-            <p>Long-distance buses across Europe</p>
-            <a href="https://www.flixbus.com/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
-          </article>
-          <article class="card">
-            <h3>Italo Treno</h3>
-            <p>High-speed rail connections in Italy</p>
-            <a href="https://www.italotreno.com/en" target="_blank" rel="noopener noreferrer">Visit official website →</a>
-          </article>
-          <article class="card">
-            <h3>Trenitalia</h3>
-            <p>Italian regional and high-speed trains</p>
-            <a href="https://www.trenitalia.com/en.html" target="_blank" rel="noopener noreferrer">Visit official website →</a>
-          </article>
-          <article class="card">
-            <h3>Skyscanner</h3>
-            <p>Compare flight options and dates</p>
-            <a href="https://www.skyscanner.net/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
-          </article>
-          <article class="card">
-            <h3>Omio</h3>
-            <p>Compare trains, buses, and flights</p>
-            <a href="https://www.omio.com/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
-          </article>
-          <article class="card">
-            <h3>Vueling</h3>
-            <p>European airline routes</p>
-            <a href="https://www.vueling.com/en" target="_blank" rel="noopener noreferrer">Visit official website →</a>
-          </article>
-          <article class="card">
-            <h3>Ryanair</h3>
-            <p>Low-cost airline routes; check bag rules</p>
-            <a href="https://www.ryanair.com/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
-          </article>
-          <article class="card">
-            <h3>Volotea</h3>
-            <p>Flights between smaller European cities</p>
-            <a href="https://www.volotea.com/en/" target="_blank" rel="noopener noreferrer">Visit official website →</a>
-          </article>
-        </div>
-
-        <h2>Fun Hostels for Student Travelers</h2>
-        <p>Looking for affordable places to stay during your weekend trips? These student-friendly hostels offer convenient locations and opportunities to meet other travelers. Check recent reviews, prices, and availability before booking!</p>
-
-        <div class="cards" id="accommodations">
-          <article class="card">
-            <h3>St. Julian's, Malta</h3>
-            <p><strong>Marco Polo Party Hostel</strong> — A lively, social hostel in St. Julian's, close to Paceville's nightlife, with a rooftop terrace and opportunities to meet other travelers.</p>
-            <a href="https://www.marcopolomalta.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Paris, France</h3>
-            <p><strong>The People Paris Marais</strong> — A stylish hostel with a social atmosphere in Paris.</p>
-            <a href="https://www.thepeoplehostel.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Switzerland</h3>
-            <p><strong>Balmers Hostel Interlaken</strong> — A fun, social hostel for students who love mountain adventures.</p>
-            <a href="https://www.balmers.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>London, UK</h3>
-            <p><strong>Wombat's City Hostel London</strong> — A social hostel with shared spaces for meeting travelers.</p>
-            <a href="https://www.wombats-hostels.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Milan, Italy</h3>
-            <p><strong>Ostello Bello Milano Duomo</strong> — A lively hostel close to Milan's city center.</p>
-            <a href="https://ostellobello.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Venice, Italy</h3>
-            <p><strong>Anda Venice Hostel</strong> — A modern, social hostel in Mestre with easy transportation into Venice.</p>
-            <a href="https://www.andavenice.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Dublin, Ireland</h3>
-            <p><strong>Jacobs Inn Dublin</strong> — A centrally located hostel with shared spaces for travelers.</p>
-            <a href="https://jacobsinn.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>South of France</h3>
-            <p><strong>Villa Saint Exupéry Beach Hostel</strong> — A social hostel in Nice, ideal for exploring the French Riviera.</p>
-            <a href="https://villahostels.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Vienna, Austria</h3>
-            <p><strong>JO&JOE Vienna</strong> — A fun accommodation option with communal spaces and a lively atmosphere.</p>
-            <a href="https://www.joandjoe.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Budapest, Hungary</h3>
-            <p><strong>Maverick City Lodge</strong> — A centrally located hostel for exploring Budapest's nightlife.</p>
-            <a href="https://mavericklodges.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Ibiza, Spain</h3>
-            <p><strong>Amistat Island Hostel Ibiza</strong> — A social hostel for students planning a fun weekend in Ibiza.</p>
-            <a href="https://www.amistathostels.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Germany</h3>
-            <p><strong>The Circus Hostel Berlin</strong> — A lively hostel in Berlin with a welcoming atmosphere.</p>
-            <a href="https://circus-berlin.de/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Rome, Italy</h3>
-            <p><strong>YellowSquare Rome</strong> — A fun hostel with a bar, social events, and opportunities to meet other travelers.</p>
-            <a href="https://yellowsquare.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Barcelona, Spain</h3>
-            <p><strong>Unite Hostel Barcelona</strong> — A social hostel near the beach and Port Olímpic nightlife, within walking distance of Shôko Barcelona.</p>
-            <a href="https://unitehostel.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Croatia</h3>
-            <p><strong>En Route Hostel Split</strong> — A convenient hostel for exploring Split and the Croatian coast.</p>
-            <a href="https://enroutehostel.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Lisbon, Portugal</h3>
-            <p><strong>Home Lisbon Hostel</strong> — A friendly hostel known for its social atmosphere and communal dinners.</p>
-            <a href="https://www.homelisbonhostel.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Greece</h3>
-            <p><strong>Athens Backpackers</strong> — A social hostel in Athens, great for sightseeing and meeting travelers.</p>
-            <a href="https://www.athensbackpackers.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-          <article class="card">
-            <h3>Prague, Czech Republic</h3>
-            <p><strong>The RoadHouse Prague</strong> — A small, social hostel with opportunities to meet other travelers.</p>
-            <a href="https://www.theroadhouseprague.com/" target="_blank" rel="noopener noreferrer">Visit hostel website →</a>
-          </article>
-        </div>
-
-        <h2>How to compare your full weekend budget</h2>
-        <p>Add up round-trip transportation, local transfers, lodging, city taxes, meals, attraction tickets, and an emergency cushion. A cheap flight may cost more after baggage and airport transfers.</p>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Check transport first</h3>
-            <p>Train or bus can be easier for nearby Italian cities; flights may be more practical for farther destinations. Compare door-to-door travel time.</p>
-            <a href="itineraries.html">Choose a destination →</a>
-          </article>
-          <article class="card">
-            <h3>Pick the right accommodation</h3>
-            <p>Read recent reviews and confirm transit access, cancellation policies, and whether a room is shared or private.</p>
-            <a href="#accommodations">Browse accommodation ideas →</a>
-          </article>
-        </div>
-
-        <aside class="note">
-          <strong>Before you book:</strong> This is an educational travel guide, not a booking service. Check current schedules, prices, recent accommodation reviews, entry requirements, and attraction hours with official providers.
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <div class="wrap">
-      <p><strong>Florence Weekend Guide</strong> · A fictional student travel resource</p>
-      <p class="small">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
-      <p class="small"><a href="index.html">Back to home</a></p>
-    </div>
-  </footer>
 </body>
 </html>
